@@ -1,4 +1,6 @@
-  
+
+<div class="event-controls">
+      
     <div class="control full-width">
       {{combo-box
         value=timezone
@@ -7,10 +9,7 @@
         none='add_event.no_timezone'
         filterable=true}}
     </div>
-  {{/unless}}
-</div>
 
-<div class="event-controls">
   <div class="control">
     <input
       type="checkbox" 
@@ -36,6 +35,7 @@
     {{/if}}
   </div>
 {{/if}}
+</div>
 
 <div class="datetime-controls">
   <div class="start-card date-time-card">
