@@ -7,15 +7,6 @@
     <span>{{i18n 'add_event.end_enabled'}}</span>
   </div>
   
-  <div class="control">
-    <input 
-      type="checkbox" 
-      checked={{allDay}}  
-      onclick={{action "toggleAllDay" value="target.checked"}} />
-    <span>{{i18n 'add_event.all_day'}}</span>
-  </div>
-  
-  {{#unless allDay}}
     <div class="control full-width">
       {{combo-box
         value=timezone
@@ -24,7 +15,6 @@
         none='add_event.no_timezone'
         filterable=true}}
     </div>
-  {{/unless}}
 </div>
 
 <div class="datetime-controls">
@@ -46,14 +36,12 @@
           containerId="date-container-start"}}
       </div>
       
-      {{#unless allDay}}
         <div class="time-area">
           <label class="input-group-label">
             {{i18n "add_event.event_time"}}
           </label>
           <input type="text" id="start-time-picker"/>
         </div>
-      {{/unless}}
     </div>
     
     <div id="date-container-start"/>
@@ -77,14 +65,12 @@
           containerId="date-container-end"}}
       </div>
       
-      {{#unless allDay}}
         <div class="time-area">
           <label class="input-group-label">
             {{i18n "add_event.event_time"}}
           </label>
           <input type="text" id="end-time-picker"/>
         </div>
-      {{/unless}}
     </div>
     
     <div id="date-container-end"/>
@@ -102,7 +88,7 @@
       <div class="rsvp-container">
         <div class="control">
           <span>{{i18n 'add_event.going_max'}}</span>
-          {{input type='number' value=goingMax}}
+          {{input type='number' value=goingMax min="1"}}
         </div>
       </div>
     {{/if}}
