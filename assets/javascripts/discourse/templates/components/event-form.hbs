@@ -1,6 +1,21 @@
-
 <div class="event-controls">
-      
+  <div class="control">
+    <input
+      type="checkbox" 
+      checked={{endEnabled}} 
+      onclick={{action "toggleEndEnabled" value="target.checked"}} />
+    <span>{{i18n 'add_event.end_enabled'}}</span>
+  </div>
+  
+  <div class="control">
+    <input 
+      type="checkbox" 
+      checked={{allDay}}  
+      onclick={{action "toggleAllDay" value="target.checked"}} />
+    <span>{{i18n 'add_event.all_day'}}</span>
+  </div>
+  
+  {{#unless allDay}}
     <div class="control full-width">
       {{combo-box
         value=timezone
@@ -9,32 +24,7 @@
         none='add_event.no_timezone'
         filterable=true}}
     </div>
-
-  <div class="control">
-    <input
-      type="checkbox" 
-      checked={{endEnabled}} 
-      onclick={{action "toggleEndEnabled" value="target.checked"}} />
-    <span>{{i18n 'add_event.end_enabled'}}</span>
-  </div>
-
-{{#if siteSettings.events_rsvp}}
-  <div class="rsvp-controls">
-    <div class="control">
-      {{input type='checkbox' checked=rsvpEnabled}}
-      <span>{{i18n 'add_event.rsvp_enabled'}}</span>
-    </div>
-    
-    {{#if rsvpEnabled}}
-      <div class="rsvp-container">
-        <div class="control">
-          <span>{{i18n 'add_event.going_max'}}</span>
-          {{input type='number' value=goingMax}}
-        </div>
-      </div>
-    {{/if}}
-  </div>
-{{/if}}
+  {{/unless}}
 </div>
 
 <div class="datetime-controls">
@@ -56,6 +46,7 @@
           containerId="date-container-start"}}
       </div>
       
+      {{#unless allDay}}
         <div class="time-area">
           <label class="input-group-label">
             {{i18n "add_event.event_time"}}
@@ -86,6 +77,7 @@
           containerId="date-container-end"}}
       </div>
       
+      {{#unless allDay}}
         <div class="time-area">
           <label class="input-group-label">
             {{i18n "add_event.event_time"}}
@@ -99,3 +91,20 @@
   </div>
 </div>
 
+{{#if siteSettings.events_rsvp}}
+  <div class="rsvp-controls">
+    <div class="control">
+      {{input type='checkbox' checked=rsvpEnabled}}
+      <span>{{i18n 'add_event.rsvp_enabled'}}</span>
+    </div>
+    
+    {{#if rsvpEnabled}}
+      <div class="rsvp-container">
+        <div class="control">
+          <span>{{i18n 'add_event.going_max'}}</span>
+          {{input type='number' value=goingMax}}
+        </div>
+      </div>
+    {{/if}}
+  </div>
+{{/if}}
