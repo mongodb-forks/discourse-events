@@ -237,7 +237,6 @@ export default {
           afterModel(model, transition) {
             const filter = this.filter(model.category);
             if (filter === 'calendar' || filter === 'agenda') {
-              console.log('agendarini');
               return this.replaceWith(`/c/${Category.slugFor(model.category)}/l/${this.filter(model.category)}?order=activity`);
             } else {
               return this._super(...arguments);
