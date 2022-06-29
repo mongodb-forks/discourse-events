@@ -24,7 +24,7 @@ end
 
 class ::TopicQuery
   def list_agenda
-    @options[:unordered] = true
+    @options[:unordered] = false
     @options[:list] = 'agenda'
 
     opts = {
@@ -83,7 +83,7 @@ class ::TopicQuery
           AND tcf.name = 'event_start' LIMIT 1
         )
         ELSE 0 END
-      ) ASC") if [nil, "default"].include? @options[:order]
+      ) DESC") if [nil, "default"].include? @options[:order]
 
     if options[:include_excerpt]
       topics.each { |t| t.include_excerpt = true }
