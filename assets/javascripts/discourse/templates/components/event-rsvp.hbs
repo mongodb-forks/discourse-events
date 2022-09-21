@@ -13,11 +13,11 @@
     {{#if currentUser}}
       <a {{action 'openModal'}}>
         <span>{{goingTotal}}</span>
-        <span>{{i18n 'event_rsvp.going.rsvpd'}}</span>
+        <span>{{i18n 'event_rsvp.going.label'}}</span>
       </a>
     {{else}}
       <span>{{goingTotal}}</span>
-      <span>{{i18n 'event_rsvp.going.rsvpd'}}</span>
+      <span>{{i18n 'event_rsvp.going.label'}}</span>
     {{/if}}
   {{/if}}
   {{#if goingMessage}}
