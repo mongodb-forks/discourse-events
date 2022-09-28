@@ -9,7 +9,7 @@ en:
       event_time: Time
       event_add: Done
       event_clear: Clear
-      end_enabled: "Event end"
+      end_enabled: "Multi-day event"
       all_day: "All day"
       timezone: "Timezone"
       no_timezone: "Select a timezone"
@@ -80,6 +80,8 @@ en:
         title: "Guests"
         filter: "Filter"
       going:
+        rsvpd: "✓ RSVP"
+        rsvp: "RSVP"
         label: "Going"
         max_reached: "Booked out"
         one_spot_left: "1 spot left"
