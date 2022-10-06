@@ -78,3 +78,6 @@ plugins:
   events_rsvp:
     default: false
     client: true
+  events_webcal_api_enabled:
+    default: true 
+    client: true
