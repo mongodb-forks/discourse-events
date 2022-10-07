@@ -31,7 +31,8 @@ en:
     events_hamburger_menu_agenda_link: "Add a link to the site agenda to the hamburger menu."
     events_min_trust_to_create: "Min trust to create event."
     events_rsvp: "Enable event rsvp."
-
+    events_webcal_api_enabled: "Enable WebCal API generation"
+    
   rss_description:
     events: "Events"
 

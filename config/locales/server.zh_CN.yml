@@ -11,3 +11,4 @@ zh_CN:
     events_timezone_display_default: "默认时区。"
     events_timezone_display_event: "事件时区，若给出。"
     events_timezone_display_different: "事件时区，若给出且和默认不同。"
+    events_webcal_api_enabled: "啟用 WebCal API 生成"

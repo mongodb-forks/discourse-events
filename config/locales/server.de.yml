@@ -19,6 +19,7 @@ de:
     events_hamburger_menu_agenda_link: "Im Hamburger Menü Link zur Agenda (alle Kategorien) hinzufügen."
     events_min_trust_to_create: "Minimale Vertrauensstufe, um Veranstaltungen zu erstellen."
     events_rsvp: "Gästeliste aktivieren"
+    events_webcal_api_enabled: "Genereren van WebCal-API inschakelen"
 
   rss_description:
     events: "Veranstaltungen"
