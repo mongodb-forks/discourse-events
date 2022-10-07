@@ -30,6 +30,7 @@ fi:
     events_hamburger_menu_agenda_link: "Lisää hampurilaisvalikkoon linkki tapahtumalistaukseen."
     events_min_trust_to_create: "Alin luottamustaso, jolla käyttäjä voi luoda tapahtuman."
     events_rsvp: "Ota käyttöön tapahtumiin ilmoittautuminen."
+    events_webcal_api_enabled: "Ota WebCal API:n luominen käyttöön"
 
   rss_description:
     events: "Tapahtumat"

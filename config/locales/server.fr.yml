@@ -30,6 +30,8 @@ fr:
     events_hamburger_menu_agenda_link: "Ajoutez un lien vers l'agenda du site au menu des hamburgers."
     events_min_trust_to_create: "Min confiance pour créer un événement."
     events_rsvp: "Activer l'événement RSVP."
+    events_webcal_api_enabled: "Activer la génération d'API WebCal"
+    
   rss_description:
     events: "Événements"
   webcal_description:
