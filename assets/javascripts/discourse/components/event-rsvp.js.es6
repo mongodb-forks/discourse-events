@@ -31,6 +31,11 @@ export default Component.extend({
 
   @discourseComputed('currentUser', 'eventFull')
   canGo(currentUser, eventFull) {
+    var currentDate = new Date();
+    var currentDateIso = currentDate.toISOString();
+    if (currentDateIso > this.get('topic.event.start')){
+        return false;
+    }
     return currentUser && !eventFull;
   },
 
