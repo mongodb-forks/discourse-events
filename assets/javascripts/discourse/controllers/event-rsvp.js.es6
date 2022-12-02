@@ -26,10 +26,10 @@ export default Controller.extend(ModalFunctionality, {
     ajax('/calendar-events/rsvp/users', {
       data:{
         usernames
-      }
+      },
+      type: "POST"
     }).then((response) => {
       let userList = response.users || [];
-      
       this.setProperties({
         userList,
         loadingList: false
