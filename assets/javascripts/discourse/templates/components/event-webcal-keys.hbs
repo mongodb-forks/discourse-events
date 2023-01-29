@@ -5,4 +5,6 @@
       <p class="webcal-notice">{{i18n 'webcal_preferences.notice'}}</p>  
     </div>
 {{/if}}
-{{d-button action=(action "show") class="btn-primary" label="webcal_preferences.generate"}}
+{{#if siteSettings.events_webcal_api_enabled}}
+  {{d-button action=(action "show") class="btn-primary" label="webcal_preferences.generate"}}
+{{/if}}
