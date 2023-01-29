@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ::TopicQuery.add_custom_filter(:start) do |topics, query|
   if query.options[:start]
     topics.where("topics.id in (
@@ -24,7 +25,7 @@ end
 
 class ::TopicQuery
   def list_agenda
-    @options[:unordered] = false
+    @options[:unordered] = true
     @options[:list] = 'agenda'
 
     opts = {
@@ -83,7 +84,7 @@ class ::TopicQuery
           AND tcf.name = 'event_start' LIMIT 1
         )
         ELSE 0 END
-      ) DESC") if [nil, "default"].include? @options[:order]
+      ) ASC") if [nil, "default"].include? @options[:order]
 
     if options[:include_excerpt]
       topics.each { |t| t.include_excerpt = true }
