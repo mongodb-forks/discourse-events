@@ -104,15 +104,6 @@
           <span>{{i18n 'add_event.going_max'}}</span>
           {{input type='number' value=goingMax min="1"}}
         </div>
-
-        <div class="control full-width">
-          <span>{{i18n 'add_event.going'}}</span>
-          {{email-group-user-chooser
-            value=usersGoing
-            onChange=(action (mut usersGoing))
-            class="user-selector"
-            placeholderKey="composer.users_placeholder"}}
-        </div>
       </div>
     {{/if}}
   </div>
