@@ -4,7 +4,6 @@ class CalendarEvents::ApiKeysController < ApplicationController
   APPLICATION_NAME = 'discourse-events'
 
   before_action :ensure_logged_in
-
 =begin
   As soon as a new client_id is passed for the same API key, the key record
   will be updated to contain the new client_id automatically.
@@ -14,6 +13,7 @@ class CalendarEvents::ApiKeysController < ApplicationController
   TODO: Instead we should allow a unique key to be created for each client.
 =end
   def index
+    return unless SiteSetting.events_webcal_api_enabled
     key = UserApiKey.create! attributes.reverse_merge(
       scopes: [UserApiKeyScope.new(name: "#{APPLICATION_NAME}:#{CalendarEvents::USER_API_KEY_SCOPE}")],
       # client_id has a unique constraint

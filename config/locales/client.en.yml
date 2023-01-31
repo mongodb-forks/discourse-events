@@ -9,7 +9,7 @@ en:
       event_time: Time
       event_add: Done
       event_clear: Clear
-      end_enabled: "Multi-day Event"
+      end_enabled: "Multi-day event"
       all_day: "All day"
       timezone: "Timezone"
       no_timezone: "Select a timezone"
