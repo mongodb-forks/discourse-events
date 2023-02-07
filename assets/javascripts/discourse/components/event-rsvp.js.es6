@@ -10,14 +10,18 @@ export default Component.extend({
   classNames: 'event-rsvp',
   goingSaving: false,
 
-  didReceiveAttrs() {
-    const currentUser = this.currentUser;
-    const eventGoing = this.topic.event.going;
+  @discourseComputed('currentUser', 'topic.event.going')
+  userGoing(user, eventGoing) {
+    return eventGoing && eventGoing.indexOf(user.username) > -1;
+  },
 
-    this.setProperties({
-      goingTotal: eventGoing ? eventGoing.length : 0,
-      userGoing: eventGoing && eventGoing.indexOf(currentUser.username) > -1
-    });
+  @discourseComputed('topic.event.going')
+  goingTotal(eventGoing) {
+    if (eventGoing) {
+      return eventGoing.length;
+    } else {
+      return 0;
+    }
   },
 
   @discourseComputed('userGoing')
