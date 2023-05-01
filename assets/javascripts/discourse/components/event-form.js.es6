@@ -11,7 +11,7 @@ import {
 
 export default Component.extend({
   classNames: 'event-form',
-  endEnabled: false,
+  endEnabled: true,
   allDay: false,
   showTimezone: false,
   
@@ -23,7 +23,7 @@ export default Component.extend({
   },
   
   eventValid(event) {
-    return !event || !event.end || moment(event.end).isSameOrAfter(event.start);
+    return !event || !event.end || moment(event.end).isAfter(event.start);
   },
 
   @observes('startDate', 'startTime', 'endDate', 'endTime', 'endEnabled', 'allDay', 'timezone', 'rsvpEnabled', 'goingMax', 'usersGoing')
