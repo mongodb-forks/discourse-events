@@ -25,6 +25,15 @@ export default Component.extend({
     this.setProperties(props);
     this.setupTimePicker("start");
     this.setupTimePicker("end");
+
+    if (
+      this.siteSettings.events_add_default_end_time &&
+      !this.event &&
+      !this.endDate &&
+      !this.endTime
+    ) {
+      this.send("toggleEndEnabled", true);
+    }
   },
 
   eventValid(event) {
@@ -103,11 +112,20 @@ export default Component.extend({
 
         if (!this.allDay) {
           if (!this.endTime) {
-            this.set("endTime", this.startTime);
+            let start = moment(this.startDate + " " + this.startTime);
+            this.set(
+              "endTime",
+              moment(start).add(1, "hours").format(formTimeFormat)
+            );
           }
 
           this.setupTimePicker("end");
         }
+      } else {
+        this.setProperties({
+          endDate: undefined,
+          endTime: undefined,
+        });
       }
     },
 
