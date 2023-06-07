@@ -28,6 +28,7 @@ export default Controller.extend(ModalFunctionality, {
     }
 
     ajax("/discourse-events/rsvp/users", {
+      type: "POST",
       data: {
         usernames,
       },
