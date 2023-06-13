@@ -112,3 +112,12 @@
     {{/if}}
   </div>
 {{/if}}
+
+<div class="control">
+  <label>{{i18n 'add_event.my_custom_input_label'}}</label>
+  <input type="text" value={{myCustomInputValue}} onchange={{action "updateMyCustomInput" value="target.value"}} />
+  
+  {{#if showCustomButton}}
+    <button onclick={{action "navigateToCustomUrl"}}>Go to URL</button>
+  {{/if}}
+</div>

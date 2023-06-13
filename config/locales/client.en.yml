@@ -1,6 +1,7 @@
 en:
   js:
     add_event:
+      my_custom_input_label: "Wizard URL"
       btn_label: "Add Event"
       modal_title: Add Event
       event_start: Start

@@ -17,6 +17,8 @@ export default Component.extend({
   endEnabled: false,
   allDay: false,
   showTimezone: false,
+  myCustomInputValue: null,
+  showCustomButton: false, // Add this property
 
   didInsertElement() {
     const props = setupEventForm(this.event, {
@@ -126,6 +128,15 @@ export default Component.extend({
           this.set("endTime", end.format(formTimeFormat));
           this.setupTimePicker("end");
         }
+      }
+    },
+    updateMyCustomInput(value) {
+      this.set('myCustomInputValue', value);
+      this.set('showCustomButton', value.trim().length > 0); // Set a flag to conditionally show the button
+    },
+    navigateToCustomUrl() {
+      if (this.myCustomInputValue) {
+        window.open(this.myCustomInputValue, '_blank');
       }
     },
   },
