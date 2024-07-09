@@ -80,7 +80,7 @@ en:
         title: "Guests"
         filter: "Filter"
       going:
-        label: "Going"
+        label: "RSVP"
         max_reached: "Booked out"
         one_spot_left: "1 spot left"
         x_spots_left: "{{spotsLeft}} spots left"
